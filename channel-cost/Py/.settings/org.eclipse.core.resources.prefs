@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//scheduler/InstCMDJob.py=utf-8
+encoding//scheduler/InstCommon.py=utf-8
+encoding//scheduler/InstFileLoadJob.py=utf-8
+encoding//scheduler/InstHiveJob.py=utf-8
+encoding//scheduler/InstHivePushJob.py=utf-8
+encoding//scheduler/InstJob.py=utf-8
+encoding//scheduler/InstJobStream.py=utf-8
+encoding//scheduler/InstMysqlLoadJob.py=utf-8
+encoding//scheduler/InstMysqlQueryJob.py=utf-8
+encoding//scheduler/InstRJob.py=utf-8
+encoding//scheduler/test/test_InstHivePushJob.py=utf-8
+encoding//test/test_ChannelPull.py=utf-8
+encoding//test/test_PullData.py=utf-8
+encoding/data_dim_pull.py=utf-8
+encoding/file_common.py=utf-8
+encoding/push_data.py=utf-8
