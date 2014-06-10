@@ -2,7 +2,7 @@
 rm(list=ls(all=TRUE))
 ls()
 
-# 时间序列数据预处理，返回dataframe类型结果
+# 时间序列数据预处理，构造自变量与因变量，返回dataframe
 ts_prepare <- function(factFrame, featFrame, dataRange, type="activate",fact="activate_count") {
   dat <- subset(factFrame, factFrame$date_id>=dataRange[1]&factFrame$date_id<=dataRange[2])
   fea <- subset(featFrame, featFrame$date_id>=dataRange[1]&featFrame$date_id<=dataRange[2])
@@ -105,6 +105,7 @@ model_fit <- function(ts.fit, poly.order, type="activate") {
     nlmod <- active_model(y,x,xm,xp,xw,poly.order)
   }
   parm <- summary(nlmod)$parameters
+  print(summary(nlmod)); ## 
   x.predict <- x[length(x)] + 1:3/100
   nlmod.predict <- rep(parm[1,1], 3)
   for (i in c(1:poly.order)) {
@@ -188,7 +189,7 @@ model_select <- function(factFrame, featFrame, fitRange,testRange,testLength=30,
           if (nmae < best_nmae) {
             best_nmae <- nmae
             best_parm <- c(fitLen, testLen, polyOrder, best_nmae,parm)
-            #print (c(fitLen, testLen, polyOrder))
+            print("update best model info"); print (c(fitLen, testLen, polyOrder)); ##  
           }
           #print (nmae)
           #plot(ts.fit$x,log(ts.fit$y), type="l",xlim=c(0,(nrow(ts.fit)+testLen+1)/100))
@@ -207,12 +208,15 @@ model_select <- function(factFrame, featFrame, fitRange,testRange,testLength=30,
 
 args = commandArgs(TRUE)
 #args = c("D://R work place//product_predict",20140330,20140331,20140429,"baiduboxapp_detail_1.csv","baiduboxapp_feature_1.csv")
+args=c('D:/project/github/predict/channel-KPI/',20140604,20140605,20140704,
+       'data/baidubrowser_detail.txt','data/baidubox_f1.txt','baidubrowser_predict.log')
 workpath <- args[1]
 basetime <- args[2]
 predict_start_date <- args[3]
 predict_end_date <- args[4]
 datfile <- args[5]
 feafile <- args[6]
+outpath <- args[7]
 
 #全局常量
 graph <- TRUE
@@ -231,11 +235,13 @@ testRange <- as.numeric(c(test_start_date,basetime))
 predictRange <- as.numeric(c(predict_start_date, predict_end_date))
 
 #
-name <- c("all_activate","android_activate","iphone_activate","all_active","android_active","iphone_active")
-type <- c("activate","activate","activate","active","active","active")
+##name <- c("all_activate","android_activate","iphone_activate","all_active","android_active","iphone_active")
+name <- c("all_activate","all_active"); ## 
+##type <- c("activate","activate","activate","active","active","active")
+type <- c("activate","active") 
 fact <- c("activate_count","android_activate_count","iphone_activate_count2","active_count","android_active_count","iphone_active_count")
 
-sink("baiduboxapp_all_detail_predict.out")
+##sink(outpath); ##sink("baiduboxapp_all_detail_predict.out")
 for (i in 1:length(name)) {
   parm <- model_select(factFrame,featFrame,fitRange,testRange,testLength=test_range,type=type[i],fact=fact[i])
   ts.history <- ts_prepare(factFrame,featFrame,c(fitRange[1],testRange[2]),type=type[i],fact=fact[i])
@@ -263,4 +269,4 @@ for (i in 1:length(name)) {
     dev.off()
   }
 }
-sink()
+##sink()
