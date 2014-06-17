@@ -1,0 +1,875 @@
+
+> for (i in 1:length(name)) {
++   parm <- model_select(factFrame,featFrame,fitRange,testRange,testLength=test_range,type=type[i],fact=fact[i])
++   ts. .... [TRUNCATED] 
+Called from: eval(expr, envir, enclos)
+debug at D:/project/github/predict/channel-KPI/R/baiduboxapp_detail_predict.R#7: dat <- subset(factFrame, factFrame$date_id >= dataRange[1] & 
+    factFrame$date_id <= dataRange[2])
+[1] "dataRange" "fact"      "factFrame" "featFrame" "type"     
+     date_id activate_count active_count
+1   20121001         316458      1466291
+2   20121002         305354      1494107
+3   20121003         290015      1516652
+4   20121004         281195      1548026
+5   20121005         276611      1576669
+6   20121006         267662      1583524
+7   20121007         264295      1623032
+8   20121008         260936      1629302
+9   20121009         259183      1640455
+10  20121010         245415      1641854
+11  20121011         246902      1651611
+12  20121012         234867      1659600
+13  20121013         238784      1663684
+14  20121014         242119      1674132
+15  20121015         213006      1660090
+16  20121016         223748      1700524
+17  20121017         215126      1659875
+18  20121018         202937      1650991
+19  20121019         196544      1659059
+20  20121020         208795      1687892
+21  20121021         219978      1750715
+22  20121022         202556      1712646
+23  20121023         204346      1713552
+24  20121024         218418      1728596
+25  20121025         226976      1750170
+26  20121026         223781      1769995
+27  20121027         232854      1775030
+28  20121028         238009      1793562
+29  20121029         227122      1804823
+30  20121030         234539      1808110
+31  20121031         242085      1795444
+32  20121101         284374      1968929
+33  20121102         257938      1966038
+34  20121103         278160      2045928
+35  20121104         270738      2042740
+36  20121105         243071      1992827
+37  20121106         251299      2001940
+38  20121107         264351      2057064
+39  20121108         263771      2117710
+40  20121109         257599      2138428
+41  20121110         278217      2180613
+42  20121111         259062      2121571
+43  20121112         259195      2066586
+44  20121113         269579      2101336
+45  20121114         276940      2162585
+46  20121115         263119      2239180
+47  20121116         267611      2199808
+48  20121117         282072      2169146
+49  20121118         282046      2182650
+50  20121119         263335      2180017
+51  20121120         267689      2230559
+52  20121121         274277      2289167
+53  20121122         271774      2315525
+54  20121123         257295      2261552
+55  20121124         261496      2256264
+56  20121125         284030      2321901
+57  20121126         245419      2244836
+58  20121127         228167      2251156
+59  20121128         231961      2257476
+60  20121129         226007      2254016
+61  20121130         242256      2327584
+62  20121201         306402      2591539
+63  20121202         277545      2544016
+64  20121203         245937      2477941
+65  20121204         240858      2504576
+66  20121205         232082      2523029
+67  20121206         224053      2532523
+68  20121207         229284      2533268
+69  20121208         257690      2592084
+70  20121209         252475      2589668
+71  20121210         232788      2567847
+72  20121211         228067      2612120
+73  20121212         229667      2629320
+74  20121213         238984      2657146
+75  20121214         243915      2675660
+76  20121215         258456      2691601
+77  20121216         267667      2716412
+78  20121217         252473      2744719
+79  20121218         255287      2743443
+80  20121219         239584      2698732
+81  20121220         244505      2742894
+82  20121221         237911      2729360
+83  20121222         242661      2700012
+84  20121223         238874      2681976
+85  20121224         218520      2585925
+86  20121225         231120      2627513
+87  20121226         226160      2672532
+88  20121227         227036      2700248
+89  20121228         224533      2674220
+90  20121229         247092      2711665
+91  20121230         250323      2624231
+92  20121231         244030      2661264
+93  20130101         315261      2941117
+94  20130102         302385      2946121
+95  20130103         279234      2941649
+96  20130104         246088      2869765
+97  20130105         263821      2896850
+98  20130106         278411      2967023
+99  20130107         268194      2970229
+100 20130108         283534      3000145
+101 20130109         272471      2997258
+102 20130110         271773      3030621
+103 20130111         289876      3076865
+104 20130112         305258      3117840
+105 20130113         307923      3149269
+106 20130114         280609      3079362
+107 20130115         270857      3087061
+108 20130116         278744      3086958
+109 20130117         281233      3090538
+110 20130118         282204      3068082
+111 20130119         307998      3141950
+112 20130120         321275      3220641
+113 20130121         296038      3160322
+114 20130122         295746      3143035
+115 20130123         296159      3121453
+116 20130124         283333      3123632
+117 20130125         288022      3116521
+118 20130126         299903      3137798
+119 20130127         297186      3104681
+120 20130128         297274      3096238
+121 20130129         308591      3152077
+122 20130130         312153      3186814
+123 20130131         347328      3266908
+124 20130201         368223      3489029
+125 20130202         315410      3388472
+126 20130203         306956      3430636
+127 20130204         283274      3359676
+128 20130205         257905      3291876
+129 20130206         234517      3253303
+130 20130207         239651      3243020
+131 20130208         228442      3125391
+132 20130209         205787      2985229
+133 20130210         200532      3041700
+134 20130211         207823      3051907
+135 20130212         202830      3040280
+136 20130213         211003      3056878
+137 20130214         219565      3144535
+138 20130215         224318      3150936
+139 20130216         237951      3247988
+140 20130217         249197      3314069
+141 20130218         270738      3411787
+142 20130219         272191      3401467
+143 20130220         267752      3397412
+144 20130221         264463      3402706
+145 20130222         266348      3410561rm(list=ls(all=TRUE))
+
+ls()
+character(0)
+
+ts_prepare <- function(factFrame, featFrame, dataRange, type="activate",fact="activate_count") {
+  dat <- subset(factFrame, factFrame$date_id>=dataRange[1]&factFrame$date_id<=dataRange[2])
+  fea <- subset(featFrame, featFrame$date_id>=dataRange[1]&featFrame$date_id<=dataRange[2])
+  if (type=="activate") {
+    date <- fea$date_id
+    xm <- fea$date_month/10
+    xf <- fea$date_fest
+    xw <- cbind(xw1=fea$week_1,xw2=fea$week_2,xw3=fea$week_3,xw4=fea$week_4,xw5=fea$week_5,xw6=fea$week_6,xw7=fea$week_7)
+    xe <- fea$extrawork
+    y <- c(dat[,fact],rep(NA,nrow(fea)-nrow(dat)))
+    x <- seq(1, length(y), 1)/100
+    ts <- data.frame(date,y,x,xm,xf,xw,xe)
+  }
+  else if (type=="active") {
+    date <- fea$date_id
+    xm <- fea$date_month
+    xe <- fea$extrawork
+    if (fact=="active_count") {
+      xp <- fea$push3/1000
+    } else if (fact=="android_active_count") {
+      xp <- fea$push2/1000
+    } else if (fact=="iphone_active_count") {
+      xp <- fea$push1/1000
+    }
+    xw <- cbind(xw1=fea$week_1,xw2=fea$week_2,xw3=fea$week_3,xw4=fea$week_4,xw5=fea$week_5,xw6=fea$week_6,xw7=fea$week_7)
+    y <- c(dat[,fact],rep(NA,nrow(fea)-nrow(dat)))
+    x <- seq(1, length(y), 1)/100
+    ts <- data.frame(date,y,x,xm,xp,xw,xe)    
+  }
+  return (ts)
+}
+
+activate_model <- function(y, x, xm, xf, xw, poly.order) {
+  #é‡‡ç”¨çº¿æ€§æƒé‡æé«˜è¿‘æœŸæ ·æœ¬ç‚¹çš„é‡è¦æ€§
+  if (poly.order==1){
+    nlmod <- nls(y ~ a0+a1*x+b1*xm+c1*exp(-c2*xf)+
+                   d2*xw[,2]+d3*xw[,3]+d4*xw[,4]+d5*xw[,5]+d6*xw[,6],
+                 start=list(a0=1,a1=1,b1=1,c1=1,c2=1,d2=1,d3=1,d4=1,d5=1,d6=1))
+  } else if (poly.order==2) {
+    nlmod <- nls(y ~ a0+a1*x+a2*I(x^2)+b1*xm+c1*exp(-c2*xf)+
+                   d2*xw[,2]+d3*xw[,3]+d4*xw[,4]+d5*xw[,5]+d6*xw[,6],
+                 start=list(a0=1,a1=1,a2=1,b1=1,c1=1,c2=1,d2=1,d3=1,d4=1,d5=1,d6=1))
+  } else if (poly.order==3) {
+    nlmod <- nls(y ~ a0+a1*x+a2*I(x^2)+a3*I(x^3)+b1*xm+c1*exp(-c2*xf)+
+                   d2*xw[,2]+d3*xw[,3]+d4*xw[,4]+d5*xw[,5]+d6*xw[,6],
+                 start=list(a0=1,a1=1,a2=1,a3=1,b1=1,c1=1,c2=1,d2=1,d3=1,d4=1,d5=1,d6=1))
+  } else if(poly.order==4) {
+    nlmod <- nls(y ~ a0+a1*x+a2*I(x^2)+a3*I(x^3)+a4*I(x^4)+b1*xm+c1*exp(-c2*xf)+
+                   d2*xw[,2]+d3*xw[,3]+d4*xw[,4]+d5*xw[,5]+d6*xw[,6],
+                 start=list(a0=1,a1=1,a2=1,a3=1,a4=1,b1=1,c1=1,c2=1,d2=1,d3=1,d4=1,d5=1,d6=1))
+  } else if(poly.order==5) {
+    nlmod <- nls(y ~ a0+a1*x+a2*I(x^2)+a3*I(x^3)+a4*I(x^4)+a4*I(x^5)+b1*xm+c1*exp(-c2*xf)+
+                   d2*xw[,2]+d3*xw[,3]+d4*xw[,4]+d5*xw[,5]+d6*xw[,6],
+                 start=list(a0=1,a1=1,a2=1,a3=1,a4=1,a5=1,b1=-0.02,c1=0.38,c2=0.60,d2=-0.08,d3=-0.10,d4=-0.11,d5=-0.11,d6=-0.08))
+  }
+  return (nlmod)
+}
+
+active_model <- function(y, x, xm, xp, xw, poly.order) {
+  #é‡‡ç”¨çº¿æ€§æƒé‡æé«˜è¿‘æœŸæ ·æœ¬ç‚¹çš„é‡è¦æ€§
+  if (poly.order==1){
+    nlmod <- nls(y ~ a0+a1*x+b1*xm+c1*xp+d1*xw[,1]+d2*xw[,7],
+                 start=list(a0=1,a1=1,b1=1,c1=1,d1=1,d2=1))
+  } else if (poly.order==2) {
+    nlmod <- nls(y ~ a0+a1*x+a2*I(x^2)+b1*xm+c1*xp+d1*xw[,1]+d2*xw[,7],
+                 start=list(a0=1,a1=1,a2=1,b1=1,c1=1,d1=1,d2=1))
+  } else if (poly.order==3) {
+    nlmod <- nls(y ~ a0+a1*x+a2*I(x^2)+a3*I(x^3)+b1*xm+c1*xp+d1*xw[,1]+d2*xw[,7],
+                 start=list(a0=1,a1=1,a2=1,a3=1,b1=1,c1=1,d1=1,d2=1))
+  } else if(poly.order==4) {
+    nlmod <- nls(y ~ a0+a1*x+a2*I(x^2)+a3*I(x^3)+a4*I(x^4)+b1*xm+c1*xp+d1*xw[,1]+d2*xw[,7],
+                 start=list(a0=1,a1=1,a2=1,a3=1,a4=1,b1=1,c1=1,d1=1,d2=1))
+  } else if(poly.order==5) {
+    nlmod <- nls(y ~ a0+a1*x+a2*I(x^2)+a3*I(x^3)+a4*I(x^4)+a5*I(x^5)+b1*xm+c1*xp+d1*xw[,1]+d2*xw[,7],
+                 start=list(a0=1,a1=1,a2=1,a3=1,a4=1,a5=1,b1=1,c1=1,d1=1,d2=1))
+  }
+  return (nlmod)
+}
+
+model_fit <- function(ts.fit, poly.order, type="activate") {
+  if (type=="activate") {
+    xm <- ts.fit[,"xm"]
+    xf <- ts.fit[,"xf"]
+    #xe <- ts.fit[,"xe"]
+    xw <- cbind(ts.fit[,"xw1"],ts.fit[,"xw2"],ts.fit[,"xw3"],ts.fit[,"xw4"],ts.fit[,"xw5"],ts.fit[,"xw6"],ts.fit[,"xw7"])
+    x <- ts.fit[,"x"]
+    y <- log(ts.fit[,"y"])
+
+    #é‡‡ç”¨çº¿æ€§æƒé‡æé«˜è¿‘æœŸæ ·æœ¬ç‚¹çš„é‡è¦æ€§
+    nlmod <- activate_model(y,x,xm,xf,xw,poly.order)
+    #nlmod.fit <- predict(nlmod)
+  } else if (type=="active") {
+    xm <- ts.fit[,"xm"]
+    xp <- ts.fit[,"xp"]
+    #xe <- ts.fit[,"xe"]
+    xw <- cbind(ts.fit[,"xw1"],ts.fit[,"xw2"],ts.fit[,"xw3"],ts.fit[,"xw4"],ts.fit[,"xw5"],ts.fit[,"xw6"],ts.fit[,"xw7"])
+    x <- ts.fit[,"x"]
+    y <- log(ts.fit[,"y"])
+    nlmod <- active_model(y,x,xm,xp,xw,poly.order)
+  }
+  parm <- summary(nlmod)$parameters
+  print(summary(nlmod)); ## 
+  x.predict <- x[length(x)] + 1:3/100
+  nlmod.predict <- rep(parm[1,1], 3)
+  for (i in c(1:poly.order)) {
+    nlmod.predict <- nlmod.predict+parm[i+1,1]*x.predict^i
+  }
+  base0 <- nlmod.predict[1]
+  diff0 <- (nlmod.predict[3]-nlmod.predict[1])/2
+  parm <- c(base0,diff0,as.numeric(parm[(poly.order+2):nrow(parm),1]))
+  return (parm)
+}
+
+model_predict <- function(ts.predict, poly.order, parm, type="activate") {
+  if (type == "activate") {
+    xm <- ts.predict[,"xm"]
+    xf <- ts.predict[,"xf"]
+    xw <- cbind(ts.predict[,"xw1"],ts.predict[,"xw2"],ts.predict[,"xw3"],
+                ts.predict[,"xw4"],ts.predict[,"xw5"],ts.predict[,"xw6"])
+    x <- ts.predict[,"x"]
+    nlmod.predict <- rep(parm[1],nrow(ts.predict))
+    for (k in 2:length(nlmod.predict)) {
+      nlmod.predict[k] <- nlmod.predict[1]+parm[2]*(k-1)
+    }
+    nlmod.predict <- (nlmod.predict+parm[3]*xm+parm[4]*exp(-parm[5]*xf))
+    for (j in c(6:10)) {
+      nlmod.predict <- nlmod.predict+parm[j]*xw[,j-4]
+    }
+  } else if (type == "active") {
+    xm <- ts.predict[,"xm"]
+    xp <- ts.predict[,"xp"]
+    xw <- cbind(ts.predict[,"xw1"],ts.predict[,"xw2"],ts.predict[,"xw3"],
+                ts.predict[,"xw4"],ts.predict[,"xw5"],ts.predict[,"xw6"])
+    x <- ts.predict[,"x"]
+    nlmod.predict <- rep(parm[1],nrow(ts.predict))
+    for (k in 2:length(nlmod.predict)) {
+      nlmod.predict[k] <- nlmod.predict[1]+parm[2]*(k-1)
+    }
+    xp[which(xp<0)] <- rnorm(length(xp[which(xp<0)]),mean=parm[7],sd=parm[8])
+    nlmod.predict <- (nlmod.predict+parm[3]*xm+parm[4]*xp)
+    nlmod.predict <- (nlmod.predict+parm[5]*xw[,1]+parm[6]*xw[,2])
+  }
+  return (nlmod.predict) 
+}
+
+model_select <- function(factFrame, featFrame, fitRange,testRange,testLength=30,type="activate",fact="activate_count") {
+
+  fitRange <- as.Date(as.character(fitRange),"%Y%m%d")
+  testRange <- as.Date(as.character(testRange),"%Y%m%d")
+  
+  # Parameters Need to be fitted
+  fitLenRange <- c(210:90)
+  testLenRange <- c(30:26)
+  polyOrderRange <- c(1:5)
+
+  best_nmae <- 99999
+  best_parm <- c(-1,-1,-1)
+  for (testLen in testLenRange) {
+    testStartDate <- testRange[2]-testLen+1
+    testEndDate <- testRange[2]
+    for (fitLen in fitLenRange) {
+      fitStart <- as.numeric(format(testStartDate - fitLen,"%Y%m%d"))
+      fitEnd <- as.numeric(format(testStartDate - 1,"%Y%m%d"))
+      testStart <- as.numeric(format(testStartDate,"%Y%m%d"))
+      testEnd <- as.numeric(format(testEndDate,"%Y%m%d"))
+      
+      ts.fit <- ts_prepare(factFrame,featFrame,c(fitStart,fitEnd),type=type,fact=fact)
+      ts.predict <- ts_prepare(factFrame,featFrame,c(testStart,testEnd),type=type,fact=fact)
+      # x is the polynominal value
+      ts.predict$x <- ts.predict$x+nrow(ts.fit)/100
+      
+      for (polyOrder in polyOrderRange){
+        tryCatch({
+          parm <- model_fit(ts.fit,polyOrder,type)
+          #xp <- c(ts.fit$xp,ts.predict$xp)
+          xp <- c(ts.predict$xp)
+          mu <- mean(xp[which(xp>0)])
+          sigma <- sd(xp[which(xp>0)])
+          ts.test <- model_predict(ts.predict,polyOrder,c(parm,mu,sigma),type)
+          mae <- abs((ts.predict$y-exp(ts.test))/ts.predict$y)
+          weight <- ceiling((1:length(mae))/7)
+          nmae <- sum(mae*weight/sum(weight))
+          if (nmae < best_nmae) {
+            best_nmae <- nmae
+            best_parm <- c(fitLen, testLen, polyOrder, best_nmae,parm)
+            print("update best model info"); print (c(fitLen, testLen, polyOrder)); ##  
+          }
+          #print (nmae)
+          #plot(ts.fit$x,log(ts.fit$y), type="l",xlim=c(0,(nrow(ts.fit)+testLen+1)/100))
+          #lines(seq((nrow(ts.fit)+1)/100,(nrow(ts.fit)+testLen+1)/100,0.01),log(ts.predict$y),lwd=2)
+          #lines(seq((nrow(ts.fit)+1)/100,(nrow(ts.fit)+testLen+1)/100,0.01),ts.res,col="red",lwd=2)        
+        }, error = function(e){
+          #print (c(-1,-1,testLen,fitLen))
+        })
+      }
+    }
+  }
+  #print (best_nmae)
+  #print (best_parm)
+  return (best_parm)
+}
+
+args = commandArgs(TRUE)
+
+args=c('D:/project/github/predict/channel-KPI/',20140604,20140605,20140704,
+       'data/baidubrowser_detail.txt','data/baidubox_f1.txt','baidubrowser_predict.log')
+
+workpath <- args[1]
+
+basetime <- args[2]
+
+predict_start_date <- args[3]
+
+predict_end_date <- args[4]
+
+datfile <- args[5]
+
+feafile <- args[6]
+
+outpath <- args[7]
+
+graph <- TRUE
+
+test_range <- 30
+
+fit_start_date <- 20120901
+
+fit_end_date <- format(as.Date(basetime,"%Y%m%d")-test_range,"%Y%m%d")
+
+test_start_date <- format(as.Date(basetime,"%Y%m%d")-test_range+1,"%Y%m%d")
+
+test_end_date <- format(as.Date(basetime,"%Y%m%d")-1,"%Y%m%d")
+
+setwd(workpath)
+
+factFrame <- read.csv(datfile,header=TRUE)
+
+featFrame <- read.csv(feafile, header=TRUE)
+
+fitRange <- as.numeric(c(fit_start_date,fit_end_date))
+
+testRange <- as.numeric(c(test_start_date,basetime))
+
+predictRange <- as.numeric(c(predict_start_date, predict_end_date))
+
+name <- c("all_activate","all_active")
+
+type <- c("activate","active")
+
+fact <- c("activate_count","android_activate_count","iphone_activate_count2","active_count","android_active_count","iphone_active_count")
+
+for (i in 1:length(name)) {
+  parm <- model_select(factFrame,featFrame,fitRange,testRange,testLength=test_range,type=type[i],fact=fact[i])
+  ts.history <- ts_prepare(factFrame,featFrame,c(fitRange[1],testRange[2]),type=type[i],fact=fact[i])
+  ts.predict <- ts_prepare(factFrame,featFrame,predictRange,type=type[i],fact=fact[i])
+  ts.predict$x <- ts.predict$x+nrow(ts.history)/100
+  
+  predict.parm <- parm[5:length(parm)]
+  predict.parm[1] <- predict.parm[1]+predict.parm[2]*parm[2]
+  nmae <- parm[4]
+  if (type[i]=="active") {
+    xp <- c(ts.history$xp[(nrow(ts.history)-7):nrow(ts.history)],ts.predict$xp)
+    mu <- mean(xp[which(xp>0)])
+    sigma <- sd(xp[which(xp>0)])/3
+    predict.parm <- c(predict.parm,mu,sigma)
+  }
+  ts.res <- model_predict(ts.predict,parm[3],predict.parm,type=type[i])
+  #print (exp(ts.res))
+  cat (c(nmae,exp(ts.res)))
+  cat ("\n")
+  if (graph) {
+    png("test.png",width=700, height=500)
+    plot(ts.history$x,ts.history$y,type="l",xlim=c(0,ts.predict$x[nrow(ts.predict)]))
+    lines(ts.predict$x,ts.predict$y,col="blue",lwd=2)
+    lines(ts.predict$x,exp(ts.res),col="red",lwd=2)
+    dev.off()
+  }
+}
+Called from: eval(expr, envir, enclos)
+debug at D:/project/github/predict/channel-KPI/R/baiduboxapp_detail_predict.R#7: dat <- subset(factFrame, factFrame$date_id >= dataRange[1] & 
+    factFrame$date_id <= dataRange[2])
+
+> #°Ù¶È¿òKPIÊ±¼äÐòÁÐÊý¾ÝÔ¤²â
+> rm(list=ls(all=TRUE))
+
+> ls()
+character(0)
+
+> # Ê±¼äÐòÁÐÊý¾ÝÔ¤´¦Àí£¬¹¹Ôì×Ô±äÁ¿ÓëÒò±äÁ¿£¬·µ»Ødataframe
+> ts_prepare <- function(factFrame, featFrame, dataRange, type="activate",fact="activate_count") {
++   dat <- subs .... [TRUNCATED] 
+
+> activate_model <- function(y, x, xm, xf, xw, poly.order) {
++   #²ÉÓÃÏßÐÔÈ¨ÖØÌá¸ß½üÆÚÑù±¾µãµÄÖØÒªÐÔ
++   if (poly.order==1){
++     nlmod <- nls(y ~ a0+a1*x+b1*xm+c1*ex .... [TRUNCATED] 
+
+> active_model <- function(y, x, xm, xp, xw, poly.order) {
++   #²ÉÓÃÏßÐÔÈ¨ÖØÌá¸ß½üÆÚÑù±¾µãµÄÖØÒªÐÔ
++   if (poly.order==1){
++     nlmod <- nls(y ~ a0+a1*x+b1*xm+c1*xp+d .... [TRUNCATED] 
+
+> #
+> model_fit <- function(ts.fit, poly.order, type="activate") {
++   if (type=="activate") {
++     xm <- ts.fit[,"xm"]
++     xf <- ts.fit[,"xf"]
++   .... [TRUNCATED] 
+
+> model_predict <- function(ts.predict, poly.order, parm, type="activate") {
++   if (type == "activate") {
++     xm <- ts.predict[,"xm"]
++     xf <- t .... [TRUNCATED] 
+
+> model_select <- function(factFrame, featFrame, fitRange,testRange,testLength=30,type="activate",fact="activate_count") {
++ 
++   fitRange <- as.Date( .... [TRUNCATED] 
+
+> args = commandArgs(TRUE)
+
+> #args = c("D://R work place//product_predict",20140330,20140331,20140429,"baiduboxapp_detail_1.csv","baiduboxapp_feature_1.csv")
+> args=c('D:/projec .... [TRUNCATED] 
+
+> workpath <- args[1]
+
+> basetime <- args[2]
+
+> predict_start_date <- args[3]
+
+> predict_end_date <- args[4]
+
+> datfile <- args[5]
+
+> feafile <- args[6]
+
+> outpath <- args[7]
+
+> #È«¾Ö³£Á¿
+> graph <- TRUE
+
+> test_range <- 30
+
+> fit_start_date <- 20120901
+
+> fit_end_date <- format(as.Date(basetime,"%Y%m%d")-test_range,"%Y%m%d")
+
+> test_start_date <- format(as.Date(basetime,"%Y%m%d")-test_range+1,"%Y%m%d")
+
+> test_end_date <- format(as.Date(basetime,"%Y%m%d")-1,"%Y%m%d")
+
+> #»ñÈ¡ÑµÁ·Ô¤²âÊý¾Ý
+> setwd(workpath)
+
+> factFrame <- read.csv(datfile,header=TRUE)
+
+> featFrame <- read.csv(feafile, header=TRUE)
+
+> fitRange <- as.numeric(c(fit_start_date,fit_end_date))
+
+> testRange <- as.numeric(c(test_start_date,basetime))
+
+> predictRange <- as.numeric(c(predict_start_date, predict_end_date))
+
+> #
+> ##name <- c("all_activate","android_activate","iphone_activate","all_active","android_active","iphone_active")
+> name <- c("all_activate","all_a ..." ... [TRUNCATED] 
+
+> ##type <- c("activate","activate","activate","active","active","active")
+> type <- c("activate","active") 
+
+> fact <- c("activate_count","android_activate_count","iphone_activate_count2","active_count","android_active_count","iphone_active_count")
+
+> ##sink(outpath); ##sink("baiduboxapp_all_detail_predict.out")
+> for (i in 1:length(name)) {
++   parm <- model_select(factFrame,featFrame,fitRange,te .... [TRUNCATED] 
+Called from: eval(expr, envir, enclos)
+debug at D:/project/github/predict/channel-KPI/R/baiduboxapp_detail_predict.R#7: dat <- subset(factFrame, factFrame$date_id >= dataRange[1] & 
+    factFrame$date_id <= dataRange[2])
+[1] "dataRange" "fact"      "factFrame" "featFrame" "type"     
+766803
+491 20140203         373334      5959168
+492 20140204         373740      6072976
+493 20140205         396526      6120078
+494 20140206         401430      6086503
+495 20140207         398444      6343726
+496 20140208         408616      6165755
+497 20140209         411004      6478955
+498 20140210         382861      5970194
+499 20140211         392510      6385065
+500 20140212         400015      6506765
+501 20140213         394897      6244398
+502 20140214         395723      6477754
+503 20140215         408565      6198443
+504 20140216         414625      6213554
+505 20140217         385175      6126429
+506 20140218         379605      6480374
+507 20140219         372329      6375155
+508 20140220         364459      6281773
+509 20140221         382374      6336735
+510 20140222         430390      6591600
+511 20140223         428226      6656264
+512 20140224         389320      6456135
+513 20140225         385398      6468503
+514 20140226         377878      6461614
+515 20140227         380370      6547093
+516 20140228         410702      6671171
+517 20140301         484730      6867745
+518 20140302         459361      7401860
+519 20140303         398793      6776194
+520 20140304         387189      6705171
+521 20140305         387991      6786386
+522 20140306         371030      6665759
+523 20140307         390769      6866080
+524 20140308         444183      7349959
+525 20140309         426920      6744656
+526 20140310         369085      6758716
+527 20140311         370993      6820367
+528 20140312         377125      6827904
+529 20140313         356277      6684708
+530 20140314         372676      6706299
+531 20140315         429219      7213482
+532 20140316         412477      6937304
+533 20140317         358794      6617751
+534 20140318         357553      6757934
+535 20140319         390624      6835907
+536 20140320         401125      6949884
+537 20140321         399717      6791059
+538 20140322         448701      6953045
+539 20140323         431380      6878997
+540 20140324         373316      6803889
+541 20140325         372215      6881686
+542 20140326         355038      6497685
+543 20140327         355819      6523897
+544 20140328         377561      6506372
+545 20140329         435345      6776208
+546 20140330         419209      6758462
+547 20140331         363316      6641783
+548 20140401         402654      6885933
+549 20140402         382819      6924150
+550 20140403         383147      6815053
+551 20140404         420241      7193229
+552 20140405         471869      7332382
+553 20140406         443344      7157159
+554 20140407         403183      6954622
+555 20140408         362187      6796750
+556 20140409         353985      6877768
+557 20140410         390523      7286903
+558 20140411         401053      6992088
+559 20140412         436828      7364200
+560 20140413         418762      7367261
+561 20140414         358624      6894198
+562 20140415         364063      7051708
+563 20140416         371623      7076736
+564 20140417         382111      7062811
+565 20140418         390284      6891055
+566 20140419         428532      7321178
+567 20140420         419386      7252988
+568 20140421         372826      7061195
+569 20140422         385700      6772203
+570 20140423         397460      6732075
+571 20140424         407775      6854110
+572 20140425         448807      7096844
+573 20140426         520383      7483597
+574 20140427         489487      7155151
+575 20140428         415119      6760496
+576 20140429         421102      6773205
+577 20140430         490417      7380999
+578 20140501         649681      7652934
+579 20140502         591397      7470994
+580 20140503         545586      7461354
+581 20140504         495511      7136636
+582 20140505         467033      7223269
+583 20140506         454886      7345576
+584 20140507         449255      7338619
+585 20140508         453064      7394305
+586 20140509         496311      7682305
+587 20140510         579636      7873977
+588 20140511         573558      7969260
+589 20140512         468277      7459821
+590 20140513         451499      7455240
+591 20140514         453131      7413149
+592 20140515         461432      7531507
+593 20140516         487221      7828831
+594 20140517         611557      8323290
+595 20140518         582528      8015625
+596 20140519         473109      7384101
+597 20140520         426198      7407363
+598 20140521         427577      7437614
+599 20140522         427113      7765695
+600 20140523         457585      7533871
+601 20140524         537844      7908739
+602 20140525         538779      7880674
+603 20140526         436413      7259293
+604 20140527         415057      7172396
+605 20140528         424748      7315729
+606 20140529         404408      7208188
+607 20140530         439405      7447686
+608 20140531         511140      7589851
+609 20140601         582431      7770220
+610 20140602         570308      7978338
+611 20140603         463316      7367978
+612 20140604         444801      7421250
+Called from: eval(expr, envir, enclos)
+debug at D:/project/github/predict/channel-KPI/R/baiduboxapp_detail_predict.R#7: dat <- subset(factFrame, factFrame$date_id >= dataRange[1] & 
+    factFrame$date_id <= dataRange[2])
+
+Formula: y ~ a0 + a1 * x + b1 * xm + c1 * exp(-c2 * xf) + d2 * xw[, 2] + 
+    d3 * xw[, 3] + d4 * xw[, 4] + d5 * xw[, 5] + d6 * xw[, 6]
+
+Parameters:
+    Estimate Std. Error  t value Pr(>|t|)    
+a0 12.732065   0.012383 1028.165  < 2e-16 ***
+a1  0.141078   0.007985   17.669  < 2e-16 ***
+b1 -0.019434   0.005552   -3.500 0.000573 ***
+c1  0.260081   0.038782    6.706 2.00e-10 ***
+c2  0.750362   0.227694    3.295 0.001162 ** 
+d2 -0.104121   0.015104   -6.893 6.96e-11 ***
+d3 -0.106847   0.015109   -7.072 2.51e-11 ***
+d4 -0.102668   0.015106   -6.796 1.20e-10 ***
+d5 -0.105048   0.015119   -6.948 5.09e-11 ***
+d6 -0.070845   0.015125   -4.684 5.19e-06 ***
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+Residual standard error: 0.06743 on 200 degrees of freedom
+
+Number of iterations to convergence: 8 
+Achieved convergence tolerance: 3.965e-06
+
+[1] "update best model info"
+[1] 210  30   1
+
+Formula: y ~ a0 + a1 * x + a2 * I(x^2) + b1 * xm + c1 * exp(-c2 * xf) + 
+    d2 * xw[, 2] + d3 * xw[, 3] + d4 * xw[, 4] + d5 * xw[, 5] + 
+    d6 * xw[, 6]
+
+Parameters:
+    Estimate Std. Error t value Pr(>|t|)    
+a0 12.758023   0.016224 786.367  < 2e-16 ***
+a1  0.070221   0.030649   2.291 0.023002 *  
+a2  0.033974   0.014218   2.389 0.017805 *  
+b1 -0.020182   0.005496  -3.672 0.000309 ***
+c1  0.251516   0.038825   6.478 7.12e-10 ***
+c2  0.808838   0.252621   3.202 0.001590 ** 
+d2 -0.104288   0.014929  -6.986 4.16e-11 ***
+d3 -0.106892   0.014933  -7.158 1.54e-11 ***
+d4 -0.102593   0.014931  -6.871 7.99e-11 ***
+d5 -0.104856   0.014943  -7.017 3.48e-11 ***
+d6 -0.070533   0.014954  -4.717 4.50e-06 ***
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+Residual standard error: 0.06664 on 199 degrees of freedom
+
+Number of iterations to convergence: 9 
+Achieved convergence tolerance: 3.598e-06
+
+[1] "update best model info"
+[1] 210  30   2
+
+Formula: y ~ a0 + a1 * x + a2 * I(x^2) + a3 * I(x^3) + a4 * I(x^4) + b1 * 
+    xm + c1 * exp(-c2 * xf) + d2 * xw[, 2] + d3 * xw[, 3] + d4 * 
+    xw[, 4] + d5 * xw[, 5] + d6 * xw[, 6]
+
+Parameters:
+    Estimate Std. Error t value Pr(>|t|)    
+a0 12.836699   0.023728 541.004  < 2e-16 ***
+a1 -0.608806   0.147062  -4.140 5.15e-05 ***
+a2  1.416883   0.283453   4.999 1.27e-06 ***
+a3 -0.987748   0.202498  -4.878 2.21e-06 ***
+a4  0.228834   0.047859   4.781 3.40e-06 ***
+b1 -0.019788   0.005236  -3.779 0.000208 ***
+c1  0.242804   0.037592   6.459 8.06e-10 ***
+c2  0.898249   0.287494   3.124 0.002051 ** 
+d2 -0.104621   0.014168  -7.384 4.22e-12 ***
+d3 -0.107664   0.014176  -7.595 1.21e-12 ***
+d4 -0.103036   0.014174  -7.269 8.30e-12 ***
+d5 -0.104979   0.014184  -7.401 3.82e-12 ***
+d6 -0.070323   0.014200  -4.952 1.57e-06 ***
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+Residual standard error: 0.06323 on 197 degrees of freedom
+
+Number of iterations to convergence: 10 
+Achieved convergence tolerance: 6.61e-06
+
+Called from: eval(expr, envir, enclos)
+debug at D:/project/github/predict/channel-KPI/R/baiduboxapp_detail_predict.R#7: dat <- subset(factFrame, factFrame$date_id >= dataRange[1] & 
+    factFrame$date_id <= dataRange[2])
+Called from: eval(expr, envir, enclos)
+debug at D:/project/github/predict/channel-KPI/R/baiduboxapp_detail_predict.R#7: dat <- subset(factFrame, factFrame$date_id >= dataRange[1] & 
+    factFrame$date_id <= dataRange[2])
+
+Formula: y ~ a0 + a1 * x + b1 * xm + c1 * exp(-c2 * xf) + d2 * xw[, 2] + 
+    d3 * xw[, 3] + d4 * xw[, 4] + d5 * xw[, 5] + d6 * xw[, 6]
+
+Parameters:
+    Estimate Std. Error  t value Pr(>|t|)    
+a0 12.732367   0.012372 1029.137  < 2e-16 ***
+a1  0.142102   0.008030   17.695  < 2e-16 ***
+b1 -0.019033   0.005559   -3.424  0.00075 ***
+c1  0.260063   0.038748    6.712 1.96e-10 ***
+c2  0.749365   0.227278    3.297  0.00116 ** 
+d2 -0.104176   0.015094   -6.902 6.71e-11 ***
+d3 -0.109447   0.015273   -7.166 1.47e-11 ***
+d4 -0.102670   0.015096   -6.801 1.19e-10 ***
+d5 -0.105061   0.015108   -6.954 4.99e-11 ***
+d6 -0.070873   0.015114   -4.689 5.09e-06 ***
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+Residual standard error: 0.06738 on 199 degrees of freedom
+
+Number of iterations to convergence: 8 
+Achieved convergence tolerance: 3.957e-06
+
+
+Formula: y ~ a0 + a1 * x + a2 * I(x^2) + b1 * xm + c1 * exp(-c2 * xf) + 
+    d2 * xw[, 2] + d3 * xw[, 3] + d4 * xw[, 4] + d5 * xw[, 5] + 
+    d6 * xw[, 6]
+
+Parameters:
+    Estimate Std. Error t value Pr(>|t|)    
+a0 12.756670   0.016247 785.188  < 2e-16 ***
+a1  0.075247   0.030930   2.433  0.01587 *  
+a2  0.032209   0.014419   2.234  0.02662 *  
+b1 -0.019870   0.005517  -3.602  0.00040 ***
+c1  0.251942   0.038848   6.485 6.91e-10 ***
+c2  0.805017   0.251301   3.203  0.00158 ** 
+d2 -0.104317   0.014944  -6.980 4.34e-11 ***
+d3 -0.108663   0.015125  -7.184 1.34e-11 ***
+d4 -0.102599   0.014946  -6.864 8.39e-11 ***
+d5 -0.104875   0.014958  -7.011 3.64e-11 ***
+d6 -0.070567   0.014969  -4.714 4.57e-06 ***
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+Residual standard error: 0.06671 on 198 degrees of freedom
+
+Number of iterations to convergence: 9 
+Achieved convergence tolerance: 3.548e-06
+
+[1] "update best model info"
+[1] 209  30   2
+
+Formula: y ~ a0 + a1 * x + a2 * I(x^2) + a3 * I(x^3) + b1 * xm + c1 * 
+    exp(-c2 * xf) + d2 * xw[, 2] + d3 * xw[, 3] + d4 * xw[, 4] + 
+    d5 * xw[, 5] + d6 * xw[, 6]
+
+Parameters:
+    Estimate Std. Error t value Pr(>|t|)    
+a0 12.767279   0.020373 626.664  < 2e-16 ***
+a1  0.012544   0.079145   0.158 0.874232    
+a2  0.106954   0.088066   1.214 0.226019    
+a3 -0.023905   0.027813  -0.859 0.391114    
+b1 -0.019489   0.005542  -3.517 0.000542 ***
+c1  0.256808   0.039045   6.577 4.22e-10 ***
+c2  0.772346   0.241323   3.200 0.001599 ** 
+d2 -0.104069   0.014957  -6.958 4.99e-11 ***
+d3 -0.108767   0.015136  -7.186 1.35e-11 ***
+d4 -0.103016   0.014963  -6.885 7.57e-11 ***
+d5 -0.105246   0.014974  -7.029 3.33e-11 ***
+d6 -0.070892   0.014982  -4.732 4.24e-06 ***
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+Residual standard error: 0.06676 on 197 degrees of freedom
+
+Number of iterations to convergence: 9 
+Achieved convergence tolerance: 2.576e-06
+
+
+Formula: y ~ a0 + a1 * x + a2 * I(x^2) + a3 * I(x^3) + a4 * I(x^4) + b1 * 
+    xm + c1 * exp(-c2 * xf) + d2 * xw[, 2] + d3 * xw[, 3] + d4 * 
+    xw[, 4] + d5 * xw[, 5] + d6 * xw[, 6]
+
+Parameters:
+    Estimate Std. Error t value Pr(>|t|)    
+a0 12.833348   0.023746 540.442  < 2e-16 ***
+a1 -0.596150   0.148447  -4.016 8.43e-05 ***
+a2  1.413191   0.287506   4.915 1.87e-06 ***
+a3 -0.995094   0.206387  -4.821 2.85e-06 ***
+a4  0.232397   0.049014   4.741 4.08e-06 ***
+b1 -0.019900   0.005258  -3.785 0.000204 ***
+c1  0.242735   0.037680   6.442 8.92e-10 ***
+c2  0.899588   0.288777   3.115 0.002114 ** 
+d2 -0.104600   0.014200  -7.366 4.76e-12 ***
+d3 -0.106895   0.014373  -7.437 3.14e-12 ***
+d4 -0.103062   0.014206  -7.255 9.15e-12 ***
+d5 -0.104992   0.014215  -7.386 4.25e-12 ***
+d6 -0.070321   0.014232  -4.941 1.66e-06 ***
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+Residual standard error: 0.06338 on 196 degrees of freedom
+
+Number of iterations to convergence: 10 
+Achieved convergence tolerance: 6.726e-06
+
+Called from: eval(expr, envir, enclos)
+debug at D:/project/github/predict/channel-KPI/R/baiduboxapp_detail_predict.R#7: dat <- subset(factFrame, factFrame$date_id >= dataRange[1] & 
+    factFrame$date_id <= dataRange[2])
+[1] "dataRange" "fact"      "factFrame" "featFrame" "type"     
+ÎÞtraceback 
+ÎÞtraceback 
+ [1] "activate_model"     "active_model"       "args"               "basetime"          
+ [5] "datfile"            "fact"               "factFrame"          "feafile"           
+ [9] "featFrame"          "fit_end_date"       "fit_start_date"     "fitRange"          
+[13] "graph"              "i"                  "model_fit"          "model_predict"     
+[17] "model_select"       "name"               "outpath"            "predict_end_date"  
+[21] "predict_start_date" "predictRange"       "test_end_date"      "test_range"        
+[25] "test_start_date"    "testRange"          "ts_prepare"         "type"              
+[29] "workpath"          
+function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, 
+    pattern) 
+NULL

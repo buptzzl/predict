@@ -3,7 +3,9 @@ require(TSA);
 require(xts);
 
 rm(list=ls(all=TRUE));
-# 将向量的因子做哑变量转换; @desc 异常时返回负数。
+
+#t = build_matrix(tsx.lm_in$qtr,idx=c(1,3),col_name='qtr',f_intercept=F)
+# 将向量的因子做哑变量转换; @desc 异常时返回负数 
 build_matrix = function(x, idx, col_name='V', f_intercept=FALSE, f_reverser=FALSE, f_fill=TRUE) {
   if (f_intercept==TRUE) {
     t. = model.matrix(~as.factor(x));
@@ -45,7 +47,7 @@ build_matrix = function(x, idx, col_name='V', f_intercept=FALSE, f_reverser=FALS
 # Load Arguments
 args = commandArgs(TRUE);
 #### TEST only.  ####
-args = c('D:/project/channel-cost/','2014-01-01','2014-05-04','2014-12-31','doc/total.txt', 'doc/modeloutput_lm_0506.txt');
+args = c('D:/project/github/predict/channel-cost/','2014-01-01','2014-05-04','2014-12-31','data/total.txt', 'data/modeloutput_lm_0506.txt');
 workpath = args[1]
 basetime = args[2] 
 predict_start_date = args[3] # @FMT: 2014-01-01
