@@ -17,11 +17,15 @@ t.fx.dSum = c('2013-07/2013-08', '2014-07/2014-08');  #, '2015-07/2015-08');
 # 春节 
 t.fx.dCJ = c('2013-02-09/2013-02-15','2014-02-02/2014-02-05'); 
 
-
+###############################
+## @from cbc_total_daily_test.R
+## @exp: 
+## 基于时间、节假日信息 构造时间特征集合 
+###############################
 build_xts_feature = function(x) {
   # 基于xts对象生成时间维度相关的哑变量特征 注：不可直接输入时间
   t.fx = try.xts(x);
-  t.fx.t = as.POSIXlt(time(t.fx));  #time(t.fx) = t.fx.t;  # 不能修改
+  t.fx.t = as.POSIXlt(index(t.fx));  #time(t.fx) = t.fx.t;  # 不能修改
   res = list(qtr=as.numeric(format(as.yearqtr(t.fx.t), '%q')), mon=t.fx.t$mon, yea = t.fx.t$year,
              mday=t.fx.t$mday, wday=t.fx.t$wday, yday=t.fx.t$yday, 
              idx=c(1:length(t.fx.t))
@@ -51,8 +55,8 @@ build_xts_feature = function(x) {
 
 ################################
 ## @from cbc_total_daily_test.R
-## @exp: build_matrix(tsx.lm_in$qtr,idx=c(1,3),col_name='qtr',f_intercept=F)
-## 将向量的因子做哑变量转换; @desc 异常时返回负数 
+## @exp: build_matrix(tsx.lm_in$qtr,idx=levels(as.factor(tsx.lm_in$qtr))[c(1,3)],col_name='qtr',f_intercept=F)
+## 将枚举|数值型的特征拓展为哑变量特征; @desc 异常时返回负数 
 ################################
 build_matrix = function(x, idx, col_name='V', f_intercept=FALSE, f_reverser=FALSE, f_fill=TRUE) {
   if (f_intercept==TRUE) {
@@ -136,14 +140,15 @@ fill_xts = function(x, FUN_f, range_t, fillEmpty=NULL, step=c('day', 1)) {
   t.dat. = t.x[range_t];
   FUN = match.fun(FUN_f);  # 执行插值
   t.dat.ins = FUN(t.dat.);
+  indexTZ(t.dat.ins) = Sys.getenv('TZ');
   t.dat.h = t.x[paste('', t.r_t[1], sep='/')]; 
-  if (length(t.dat.h) == 1) {
+  if (length(t.dat.h) <= 1) {
     t.dat.h = NULL;
   } else {
     t.dat.h = t.dat.h[1:(length(t.dat.h)-1)];
   }
   t.dat.t = t.x[paste(t.r_t[2], '', sep='/')]; 
-  if (length(t.dat.t) == 1){
+  if (length(t.dat.t) <= 1){
     t.dat.t = NULL;
   } else {
     t.dat.t = t.dat.t[2:length(t.dat.t)];
